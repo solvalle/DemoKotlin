@@ -36,7 +36,7 @@ class Corrutinas {
         }
     }
 
-    //Muchas corrutinas son equivalentes a un hilo en java, son las livianos y eficientes
+    //Muchas corrutinas son equivalentes a un hilo en java, son las livianos y eficientesv
 
     fun hiloEjemplo() {
         //Contador en 0
