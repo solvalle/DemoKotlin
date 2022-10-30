@@ -17,29 +17,30 @@
         android:textSize="36sp"
         android:gravity="center"
         android:fontFamily="sans-serif"/>
+
     <EditText
         android:id="@+id/create_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tarea"
         android:layout_marginTop="30dp"
-        android:padding="15dp"
         android:background="@drawable/custom_edittetext"
-        android:textColorHint="#000000"
+        android:hint="Tarea"
+        android:padding="15dp"
+        android:textAlignment="center"
         android:textColor="@color/black"
-        />
+        android:textColorHint="#000000" />
 
     <EditText
         android:id="@+id/create_priority"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:background="@drawable/custom_edittetext"
         android:hint="Prioridad"
         android:padding="15dp"
-        android:background="@drawable/custom_edittetext"
-        android:textColorHint="#000000"
+        android:textAlignment="center"
         android:textColor="@color/black"
-        />
+        android:textColorHint="#000000" />
 
     <Button
         android:id="@+id/save_button"
