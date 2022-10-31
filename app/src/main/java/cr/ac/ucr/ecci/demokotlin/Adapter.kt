@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.view.view.*
 
 class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.viewHolder>() {
+
     class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var title = itemView.title
         var priority = itemView.priority
@@ -20,6 +21,7 @@ class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.viewHolde
         return viewHolder(itemView)
     }
 
+    //View Holder
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
         when (data[position].priority.toLowerCase()) {
             "Alta" -> holder.layout.setBackgroundColor(Color.parseColor("#F05454"))
@@ -27,6 +29,7 @@ class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.viewHolde
             else -> holder.layout.setBackgroundColor(Color.parseColor("#00917C"))
         }
 
+        //Asignación de valores a UI
         holder.title.text = data[position].title
         holder.priority.text = data[position].priority
         holder.itemView.setOnClickListener{

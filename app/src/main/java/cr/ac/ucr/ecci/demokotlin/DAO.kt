@@ -2,6 +2,8 @@ package cr.ac.ucr.ecci.demokotlin
 
 import androidx.room.*
 
+//Clase DAO
+
 @Dao
 interface DAO {
     @Insert

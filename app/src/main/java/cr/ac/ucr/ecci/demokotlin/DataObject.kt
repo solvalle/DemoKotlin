@@ -1,6 +1,9 @@
 package cr.ac.ucr.ecci.demokotlin
 
 object DataObject {
+
+    //Todas las acciones que se le pueden realizar al objeto tarjeta
+
     var listdata = mutableListOf<CardInfo>()
 
     fun setData(title: String, priority: String) {

@@ -11,14 +11,20 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 
+//Crear una tarea con nombre y prioridad
 class CreateCard : AppCompatActivity() {
+
     private lateinit var database: myDatabase
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_card)
+
         database = Room.databaseBuilder(
             applicationContext, myDatabase::class.java, "To_Do"
         ).build()
+
         save_button.setOnClickListener {
             if (create_title.text.toString().trim { it <= ' ' }.isNotEmpty()
                 && create_priority.text.toString().trim { it <= ' ' }.isNotEmpty()

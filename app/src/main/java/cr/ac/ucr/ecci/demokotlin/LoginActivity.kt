@@ -1,5 +1,6 @@
 package cr.ac.ucr.ecci.demokotlin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -12,6 +13,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        //Mapeo UI
         val btnLogin = findViewById<Button>(R.id.btnLogin);
         val UsernameInput = findViewById<EditText>(R.id.UsernameInput);
         val PasswordInput = findViewById<EditText>(R.id.PasswordInput);
@@ -19,7 +21,12 @@ class LoginActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
 
             if (UsernameInput.text.trim().isNotEmpty() || PasswordInput.text.trim().isNotEmpty()) {
-                Toast.makeText(this,"Input recibido",Toast.LENGTH_LONG).show();
+                if(UsernameInput.text.toString() == "admin" || PasswordInput.text.toString() == "admin"){
+                    val intent = Intent(this, MainActivity::class.java);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(this,"Credenciales incorrectas",Toast.LENGTH_LONG).show();
+                }
             } else {
                 Toast.makeText(this,"Debe digitar sus credenciales",Toast.LENGTH_LONG).show();
             }

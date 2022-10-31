@@ -19,8 +19,11 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
     private lateinit var database: myDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //Llamado al objeto de la DB
         database = Room.databaseBuilder(
             applicationContext, myDatabase::class.java, "To_Do"
         ).build()
@@ -28,7 +31,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CreateCard::class.java)
             startActivity(intent)
         }
-        deleteAll.setOnClickListener {
+
+        //Se borran todas las tareas
+        deleteAll2.setOnClickListener {
             DataObject.deleteAll()
             GlobalScope.launch {
                 database.dao().deleteAll()
@@ -36,10 +41,16 @@ class MainActivity : AppCompatActivity() {
             setRecycler()
         }
 
+        //Se llama el login
+        deleteAll.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java);
+            startActivity(intent);
+        }
         setRecycler()
 
     }
 
+    //Layout del recyclerView
     fun setRecycler() {
         recycler_view.adapter = Adapter(DataObject.getAllData())
         recycler_view.layoutManager = LinearLayoutManager(this)
